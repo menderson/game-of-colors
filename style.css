@@ -27,6 +27,8 @@ body {
 
 .container p {
     font: 400 24px Roboto, sans-serif;
+    color: #333333;
+
 }
 
 .box-table {
@@ -79,6 +81,8 @@ h1 {
     font: 500 50px Roboto, sans-serif;
     line-height: 30px;
     margin: 20px 0 20px 0;
+    color: #333333;
+
 }
 
 .bar {
@@ -93,10 +97,14 @@ h1 {
     border-radius: 10px;
     text-align: center;
     margin-right: 100px;
+    color: #333333;
+
 }
 
 .bar p {
     padding-top: 10px;
+    color: #333333;
+
 }
 
 .score {
@@ -109,4 +117,59 @@ h1 {
     text-align: center;
     vertical-align: middle;
     margin: 0 0 10 0px;
+    color: #333333;
+
+}
+
+.send-button {
+    width:70%;
+    height: 60px;
+    background: #e02041;
+    border: 0;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 16px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px; 
+    transition: filter 0.2s;
+}
+
+.send-button:hover {
+    filter: brightness(90%);
+}
+
+.input-name {
+    width: 90%;
+    height: 60px;
+    margin-top: 20%;
+    color: #333333;
+    border: 3px solid #dcdce6;
+    border-radius: 20px;
+    padding: 0 24px;
+    font-size: 18px;
+}
+
+.restart {
+    width:70%;
+    height: 60px;
+    background: #e02041;
+    border: 0;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 25%;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px; 
+    transition: filter 0.2s;
+}
+
+.restart:hover {
+    filter: brightness(90%);
 }

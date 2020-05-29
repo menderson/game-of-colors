@@ -1,5 +1,7 @@
 var matrixOfCircles = document.querySelector('#app');
-var interval = setInterval( callback, 1000 );
+var inputElement = document.querySelector('#app input');
+//var addName = document.querySelector('#sendButton')
+var interval = setInterval(callback, 1000);
 var level = 2;
 var numberOfCircles = 4;
 var idCircleWithDiferentColor;
@@ -76,8 +78,68 @@ function decreaseTime() {
 function endGame() {
     gameOn = false;
     time = 0;
-    clearInterval( interval )
+    clearInterval(interval)
     document.getElementById("rule").innerHTML = "Fim de Jogo";
+    askname();
+}
+
+function askname() {
+    matrixOfCircles.innerHTML = '';
+    var input = document.createElement('input');
+    input.setAttribute('type', 'text');
+    input.setAttribute('placeholder', 'Digite seu nome para aparecer no ranking');
+    input.setAttribute('class', 'input-name');
+    matrixOfCircles.appendChild(input);
+    var button = document.createElement('button');
+    var textButton = document.createTextNode("Enviar");
+    button.setAttribute('onclick', 'addName()');
+    button.setAttribute('class', 'send-button');
+    button.setAttribute('id', 'sendButton');
+    button.appendChild(textButton);
+    matrixOfCircles.appendChild(button);
+
+}
+var names = [
+    { name: "Mends", score: 5 },
+]
+
+function addName() {
+    var inputElement = document.querySelector('#app input');
+    var name = inputElement.value;
+    if (name==""){
+        name="Sem Nome";
+    }
+    names.push({ name: name, scrore: score });
+    console.log(names);
+    matrixOfCircles.innerHTML = '';
+    var restart = document.createElement('button');
+    restart.setAttribute('class', 'restart');
+    var textButton = document.createTextNode("Jogar Novamente");
+    restart.appendChild(textButton);
+    restart.setAttribute('onclick', 'restart()');
+    matrixOfCircles.appendChild(restart);
+    var requestURL = 'https://github.com/menderson/game-of-colors/scoreboard.json';
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+    request.onload = function(){
+        var data = request.response;
+        console.log(data);
+    }
+
+}
+
+function restart() {
+    interval = setInterval(callback, 1000);
+    level = 2;
+    numberOfCircles = 4;
+    idCircleWithDiferentColor;
+    gameOn = true;
+    score = 0;
+    time = 12;
+    renderCircles();
+    changeColor();
 }
 
 function verifyId(idSelectedCircle) {
@@ -85,7 +147,7 @@ function verifyId(idSelectedCircle) {
         updateScore();
         updateTime();
         changeColor(changeId());
-    } else if(gameOn == true) decreaseTime();
+    } else if (gameOn == true) decreaseTime();
 };
 
 
