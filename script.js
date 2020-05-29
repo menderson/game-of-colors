@@ -10,11 +10,6 @@ var gameOn = true;
 var score = 0;
 var time = 12;
 var red, green, blue;
-var names = [
-    "Mends",
-    "Lari"
-];
-showRanking(names);
 renderCircles();
 changeColor();
 
@@ -85,7 +80,14 @@ function endGame() {
     time = 0;
     clearInterval(interval)
     document.getElementById("rule").innerHTML = "Fim de Jogo";
-    askname();
+    //askname();
+    matrixOfCircles.innerHTML = '';
+    var restart = document.createElement('button');
+    restart.setAttribute('class', 'restart');
+    var textButton = document.createTextNode("Jogar Novamente");
+    restart.appendChild(textButton);
+    restart.setAttribute('onclick', 'restart()');
+    matrixOfCircles.appendChild(restart);
 }
 
 function askname() {
@@ -102,7 +104,6 @@ function askname() {
     button.setAttribute('id', 'sendButton');
     button.appendChild(textButton);
     matrixOfCircles.appendChild(button);
-
 }
 
 
@@ -120,20 +121,6 @@ function addName() {
     restart.appendChild(textButton);
     restart.setAttribute('onclick', 'restart()');
     matrixOfCircles.appendChild(restart);
-    showRanking(names);
-
-}
-
-function showRanking(names) {
-    ranking.innerHTML = '';
-    for (nam of names) {
-        var input = document.createElement('p');
-        var inputText = document.createTextNode(nam);
-        input.appendChild(inputText);
-        ranking.appendChild(input);
-    }
-
-
 }
 
 function restart() {
@@ -155,8 +142,6 @@ function verifyId(idSelectedCircle) {
         changeColor(changeId());
     } else if (gameOn == true) decreaseTime();
 };
-
-
 
 function callback() {
     if (time > 0) {
