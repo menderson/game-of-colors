@@ -2,18 +2,37 @@ var matrixOfCircles = document.querySelector('#app');
 var ranking = document.querySelector('#ranking');
 var inputElement = document.querySelector('#app input');
 //var addName = document.querySelector('#sendButton')
-var interval = setInterval(callback, 1000);
+var interval;
 var level = 2;
-var numberOfCircles = 4;
+var numberOfCircles;
 var idCircleWithDiferentColor;
-var gameOn = true;
-var score = 0;
-var time = 12;
+var gameOn;
+var score;
+var time;
 var red, green, blue;
-renderCircles();
-changeColor();
 
-document.getElementById("rule").innerHTML = "Clique no circulo com a cor diferente";
+start();
+
+function start(){
+    document.getElementById("rule").innerHTML = "Clique no circulo com a cor diferente";
+    matrixOfCircles.innerHTML = '';
+    var restart = document.createElement('button');
+    restart.setAttribute('class', 'start');
+    var textButton = document.createTextNode("Jogar");
+    restart.appendChild(textButton);
+    restart.setAttribute('onclick', 'play()');
+    matrixOfCircles.appendChild(restart);
+}
+
+function play() {
+    gameOn = true;
+    score = 0;
+    time = 12;
+    numberOfCircles = 4;
+    renderCircles();
+    changeColor();
+    interval = setInterval(callback, 1000);
+}
 
 function getRandom(min, max) {
     min = Math.ceil(min);
@@ -106,7 +125,6 @@ function askname() {
     matrixOfCircles.appendChild(button);
 }
 
-
 function addName() {
     var inputElement = document.querySelector('#app input');
     var name = inputElement.value;
@@ -131,6 +149,7 @@ function restart() {
     gameOn = true;
     score = 0;
     time = 12;
+    document.getElementById("rule").innerHTML = "Clique no circulo com a cor diferente";
     renderCircles();
     changeColor();
 }
