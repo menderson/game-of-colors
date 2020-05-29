@@ -1,4 +1,5 @@
 var matrixOfCircles = document.querySelector('#app');
+var interval = setInterval( callback, 1000 );
 var level = 2;
 var numberOfCircles = 4;
 var idCircleWithDiferentColor;
@@ -75,6 +76,7 @@ function decreaseTime() {
 function endGame() {
     gameOn = false;
     time = 0;
+    clearInterval( interval )
     document.getElementById("rule").innerHTML = "Fim de Jogo";
 }
 
@@ -83,20 +85,18 @@ function verifyId(idSelectedCircle) {
         updateScore();
         updateTime();
         changeColor(changeId());
-    } else decreaseTime();
+    } else if(gameOn == true) decreaseTime();
 };
 
-setInterval(function () {
+
+
+function callback() {
     if (time > 0) {
         time--;
         document.getElementById("time").innerHTML = "Tempo: " + time;
     }
-    else {
-        gameOn = false;
-        score = 0;
-        document.getElementById("rule").innerHTML = "Fim de Jogo";
-    }
-}, 1000);
+    else endGame();
+}
 
 function renderCircles() {
     matrixOfCircles.innerHTML = '';
