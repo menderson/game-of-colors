@@ -10,10 +10,11 @@ var gameOn;
 var score;
 var time;
 var red, green, blue;
+var record = 0;
 
 start();
 
-function start(){
+function start() {
     document.getElementById("rule").innerHTML = "Clique no circulo com a cor diferente";
     matrixOfCircles.innerHTML = '';
     var restart = document.createElement('button');
@@ -107,6 +108,17 @@ function endGame() {
     restart.appendChild(textButton);
     restart.setAttribute('onclick', 'restart()');
     matrixOfCircles.appendChild(restart);
+    updateRecord();
+}
+
+function updateRecord() {
+    if (score > record) {
+        record = score;
+        document.getElementById("record").innerHTML = "Recorde " + record;
+    }
+    score = 0;
+
+
 }
 
 function askname() {
@@ -152,6 +164,7 @@ function restart() {
     document.getElementById("rule").innerHTML = "Clique no circulo com a cor diferente";
     renderCircles();
     changeColor();
+    document.getElementById("score").innerHTML = "Pontuação: " + score;
 }
 
 function verifyId(idSelectedCircle) {
