@@ -1,4 +1,5 @@
 var matrixOfCircles = document.querySelector('#app');
+var ranking = document.querySelector('#ranking');
 var inputElement = document.querySelector('#app input');
 //var addName = document.querySelector('#sendButton')
 var interval = setInterval(callback, 1000);
@@ -9,7 +10,11 @@ var gameOn = true;
 var score = 0;
 var time = 12;
 var red, green, blue;
-
+var names = [
+    "Mends",
+    "Lari"
+];
+showRanking(names);
 renderCircles();
 changeColor();
 
@@ -99,18 +104,15 @@ function askname() {
     matrixOfCircles.appendChild(button);
 
 }
-var names = [
-    { name: "Mends", score: 5 },
-]
+
 
 function addName() {
     var inputElement = document.querySelector('#app input');
     var name = inputElement.value;
-    if (name==""){
-        name="Sem Nome";
+    if (name == "") {
+        name = "Sem Nome";
     }
-    names.push({ name: name, scrore: score });
-    console.log(names);
+    names.push(name);
     matrixOfCircles.innerHTML = '';
     var restart = document.createElement('button');
     restart.setAttribute('class', 'restart');
@@ -118,15 +120,19 @@ function addName() {
     restart.appendChild(textButton);
     restart.setAttribute('onclick', 'restart()');
     matrixOfCircles.appendChild(restart);
-    var requestURL = 'https://github.com/menderson/game-of-colors/scoreboard.json';
-    var request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
-    request.onload = function(){
-        var data = request.response;
-        console.log(data);
+    showRanking(names);
+
+}
+
+function showRanking(names) {
+    ranking.innerHTML = '';
+    for (nam of names) {
+        var input = document.createElement('p');
+        var inputText = document.createTextNode(nam);
+        input.appendChild(inputText);
+        ranking.appendChild(input);
     }
+
 
 }
 
