@@ -15,6 +15,8 @@ var record = 0;
 start();
 
 function start() {
+    if(localStorage.getItem('record')!=null) record = localStorage.getItem('record');
+    document.getElementById("record").innerHTML = "Recorde " + record;
     document.getElementById("rule").innerHTML = "Clique no circulo com a cor diferente";
     matrixOfCircles.innerHTML = '';
     var restart = document.createElement('button');
@@ -70,6 +72,10 @@ function updateScore() {
     document.getElementById("score").innerHTML = "Pontuação: " + score;
 }
 
+function saveRecordToStorage(){
+    localStorage.setItem('record', record); //salva no localStorage do navegador
+}
+
 function levelUp() {
     if (level < 6) {
         level++;
@@ -109,6 +115,7 @@ function endGame() {
 function updateRecord() {
     if (score > record) {
         record = score;
+        saveRecordToStorage();
         document.getElementById("record").innerHTML = "Recorde " + record;
     }
 }
