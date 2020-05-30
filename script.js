@@ -50,6 +50,7 @@ function play() {
     numberOfCircles = 4;
     renderCircles();
     changeColor();
+    document.getElementById("score").innerHTML = "Pontuação: " + score;
 }
 
 function getRandom(min, max) {
