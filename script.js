@@ -27,14 +27,29 @@ function start() {
     matrixOfCircles.appendChild(restart);
 }
 
+function restart() {
+    interval = setInterval(callback, 1000);
+    level = 2;
+    numberOfCircles = 4;
+    gameOn = true;
+    score = 0;
+    time = 12;
+    document.getElementById("rule").innerHTML = "Clique no circulo com a cor diferente";
+    renderCircles();
+    changeColor();
+    document.getElementById("score").innerHTML = "Pontuação: " + score;
+}
+
 function play() {
+    interval = setInterval(callback, 1000);
+    level = 2;
+    numberOfCircles = 4;
     gameOn = true;
     score = 0;
     time = 12;
     numberOfCircles = 4;
     renderCircles();
     changeColor();
-    interval = setInterval(callback, 1000);
 }
 
 function getRandom(min, max) {
@@ -150,20 +165,6 @@ function addName() {
     restart.appendChild(textButton);
     restart.setAttribute('onclick', 'restart()');
     matrixOfCircles.appendChild(restart);
-}
-
-function restart() {
-    interval = setInterval(callback, 1000);
-    level = 2;
-    numberOfCircles = 4;
-    idCircleWithDiferentColor;
-    gameOn = true;
-    score = 0;
-    time = 12;
-    document.getElementById("rule").innerHTML = "Clique no circulo com a cor diferente";
-    renderCircles();
-    changeColor();
-    document.getElementById("score").innerHTML = "Pontuação: " + score;
 }
 
 function verifyId(idSelectedCircle) {
