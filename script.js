@@ -203,14 +203,9 @@ function renderCircles() {
 
 function generateAproximateColor() {
     if (level == 2) {
-        if (getRandom(0, 2) == 1) red = red + getRandom(40, 50);
-        else red = red - getRandom(40, 50);
-
-        if (getRandom(0, 2) == 1) green = green + getRandom(40, 50);
-        else green = green - getRandom(40, 50);
-
-        if (getRandom(0, 2) == 1) blue = blue + getRandom(40, 50);
-        else blue = blue - getRandom(40, 50);
+        red = red + (50 - score)
+        green = green + (50 - score);
+        blue = blue + (50 - score);
     }
     else {
         if (level == 3) {
