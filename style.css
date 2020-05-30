@@ -6,11 +6,6 @@
     box-sizing: 0;
 }
 
-html, body {
-    height: 100%;
-    margin: 0px 0px 0px 0px;
-}
-
 body {
     background-color: rgb(216, 223, 230);
 }

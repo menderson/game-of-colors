@@ -59,7 +59,6 @@ function endGame() {
     time = 0;
     clearInterval(interval)
     document.getElementById("rule").innerHTML = "Fim de Jogo";
-    //askname();
     matrixOfCircles.innerHTML = '';
     var restart = document.createElement('button');
     restart.setAttribute('class', 'restart');
@@ -67,7 +66,7 @@ function endGame() {
     restart.appendChild(textButton);
     restart.setAttribute('onclick', 'restart()');
     matrixOfCircles.appendChild(restart);
-    //score = 0;
+    //askname();
 }
 
 function getRandom(min, max) {
