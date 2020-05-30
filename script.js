@@ -2,11 +2,11 @@ var matrixOfCircles = document.querySelector('#app');
 var ranking = document.querySelector('#ranking');
 var inputElement = document.querySelector('#app input');
 //var addName = document.querySelector('#sendButton')
-var interval;
+var interval = setInterval(callback, 1000);
 var level = 2;
 var numberOfCircles;
 var idCircleWithDiferentColor;
-var gameOn;
+var gameOn = false;
 var score;
 var time;
 var red, green, blue;
@@ -15,6 +15,7 @@ var record = 0;
 start();
 
 function start() {
+    clearInterval(interval)
     if(localStorage.getItem('record')!=null) record = localStorage.getItem('record');
     document.getElementById("record").innerHTML = "Recorde " + record;
     document.getElementById("rule").innerHTML = "Clique no circulo com a cor diferente";
@@ -51,6 +52,22 @@ function play() {
     renderCircles();
     changeColor();
     document.getElementById("score").innerHTML = "Pontuação: " + score;
+}
+
+function endGame() {
+    gameOn = false;
+    time = 0;
+    clearInterval(interval)
+    document.getElementById("rule").innerHTML = "Fim de Jogo";
+    //askname();
+    matrixOfCircles.innerHTML = '';
+    var restart = document.createElement('button');
+    restart.setAttribute('class', 'restart');
+    var textButton = document.createTextNode("Jogar Novamente");
+    restart.appendChild(textButton);
+    restart.setAttribute('onclick', 'restart()');
+    matrixOfCircles.appendChild(restart);
+    //score = 0;
 }
 
 function getRandom(min, max) {
@@ -110,22 +127,6 @@ function decreaseTime() {
     if (time > 5) time -= 5;
     else endGame();
     document.getElementById("time").innerHTML = "Tempo: " + time;
-}
-
-function endGame() {
-    gameOn = false;
-    time = 0;
-    clearInterval(interval)
-    document.getElementById("rule").innerHTML = "Fim de Jogo";
-    //askname();
-    matrixOfCircles.innerHTML = '';
-    var restart = document.createElement('button');
-    restart.setAttribute('class', 'restart');
-    var textButton = document.createTextNode("Jogar Novamente");
-    restart.appendChild(textButton);
-    restart.setAttribute('onclick', 'restart()');
-    matrixOfCircles.appendChild(restart);
-    score = 0;
 }
 
 function updateRecord() {
