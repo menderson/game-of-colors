@@ -47,12 +47,6 @@ function generateColor() {
     blue = getRandom(0, 255);
 }
 
-function generateAproximateColor() {
-    red = red + (50 - score);
-    green = green + (50 - score);
-    blue = blue + (50 - score);
-}
-
 function changeColor() {
     generateColor();
     for (i = 1; i <= numberOfCircles; i++) {
@@ -69,6 +63,7 @@ function changeId() {
 
 function updateScore() {
     score++;
+    updateRecord();
     if (score % 10 === 0) {
         levelUp();
     }
@@ -108,7 +103,7 @@ function endGame() {
     restart.appendChild(textButton);
     restart.setAttribute('onclick', 'restart()');
     matrixOfCircles.appendChild(restart);
-    updateRecord();
+    score = 0;
 }
 
 function updateRecord() {
@@ -116,9 +111,6 @@ function updateRecord() {
         record = score;
         document.getElementById("record").innerHTML = "Recorde " + record;
     }
-    score = 0;
-
-
 }
 
 function askname() {
@@ -199,5 +191,52 @@ function renderCircles() {
             lineOfCircle.appendChild(circleElement);
         }
         matrixOfCircles.appendChild(lineOfCircle);
+    }
+}
+
+function generateAproximateColor() {
+    if (level == 2) {
+        if (getRandom(0, 2) == 1) red = red + getRandom(40, 50);
+        else red = red - getRandom(40, 50);
+
+        if (getRandom(0, 2) == 1) green = green + getRandom(40, 50);
+        else green = green - getRandom(40, 50);
+
+        if (getRandom(0, 2) == 1) blue = blue + getRandom(40, 50);
+        else blue = blue - getRandom(40, 50);
+    }
+    else {
+        if (level == 3) {
+            if (getRandom(0, 2) == 1) red = red + getRandom(25, 35);
+            else red = red - getRandom(25, 35);
+
+            if (getRandom(0, 2) == 1) green = green + getRandom(25, 35);
+            else green = green - getRandom(25, 35);
+
+            if (getRandom(0, 2) == 1) blue = blue + getRandom(25, 35);
+            else blue = blue - getRandom(25, 35);
+        }
+        else {
+            if (level == 4) {
+                if (getRandom(0, 2) == 1) red = red + getRandom(15, 22);
+                else red = red - getRandom(15, 22);
+
+                if (getRandom(0, 2) == 1) green = green + getRandom(15, 22);
+                else green = green - getRandom(15, 22);
+
+                if (getRandom(0, 2) == 1) blue = blue + getRandom(15, 22);
+                else blue = blue - getRandom(15, 22);
+            }
+            else {
+                if (getRandom(0, 2) == 1) red = red + getRandom(5, 15);
+                else red = red - getRandom(5, 15);
+
+                if (getRandom(0, 2) == 1) green = green + getRandom(5, 15);
+                else green = green - getRandom(5, 15);
+
+                if (getRandom(0, 2) == 1) blue = blue + getRandom(5, 15);
+                else blue = blue - getRandom(5, 15);
+            }
+        }
     }
 }
