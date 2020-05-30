@@ -15,7 +15,7 @@ var record = 0;
 start();
 
 function start() {
-    clearInterval(interval)
+    clearInterval(interval);
     if(localStorage.getItem('record')!=null) record = localStorage.getItem('record');
     document.getElementById("record").innerHTML = "Recorde " + record;
     document.getElementById("rule").innerHTML = "Clique no circulo com a cor diferente";
