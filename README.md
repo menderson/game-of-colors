@@ -1,9 +1,9 @@
 # Game-of-colors
 Jogo disponivel em [menderson.site](http://menderson.site)
  
-<h2 align="center"> Aplicação de um jogo simples e divertido onde você precisa encontrar o círculo cuja cor é diferente da dos demais círculos </h2>
+<h3 align="center"> Aplicação de um jogo simples e divertido onde você precisa encontrar o círculo cuja cor é diferente da dos demais círculos </h3>
 
-<h2 align="center"> O jogo conta com um ranking das dez melhores pontuações do dia </h2>
+O jogo conta com um ranking das dez melhores pontuações do dia
 
 ## **:computer: Tecnologias**
 
@@ -28,9 +28,16 @@ Execute ```npm install``` nas pastas backend, frontend, para instalar as depend�
 Rode ```npm start``` nas pastas backend e frontend para utilizar a versão web.
 
 ## Deploy
-Backend hospedado em [heroku]
-Frontend hospedado em [netlify]
-Jogo disponivel em [menderson.site](http://menderson.site)
+Backend hospedado em [heroku] </br>
+Frontend hospedado em [netlify]</br>
+Jogo disponivel em [menderson.site](http://menderson.site)</br>
+
+## Licença
+[MIT](https://github.com/menderson/game-of-colors/blob/master/LICENSE)
+
+---
+
+<h4 align="center"> <em>&lt;/&gt;</em> by <a href="https://github.com/menderson" target="_blank">menderson</a> </h4>
  
 [netlify]: https://www.netlify.com/
  
