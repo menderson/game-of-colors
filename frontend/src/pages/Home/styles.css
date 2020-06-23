@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+button:focus {
+    outline: none;
+}
+
+.row{
+    max-width: 195vh;
+}
+
+.bar {
+    max-width: 500px;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.box-table {
+    background: #fff;
+    border-radius: 60px;
+    width: 100%;
+    border: 0;
+}
+
+.box-container {
+    width: 100%;
+    max-width: 550px;
+    margin: auto;
+    border-radius: 30px;
+    display: flex;
+    padding: 3px;
+}
+
+.box-content {
+    width: 0px;
+    height: 0;
+    padding-bottom: 100%;
+}
+
+.text-center p {
+    margin: 0px;
+}
+
+.bar-element {
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.bar-element p {
+    margin: 0px;
+}
+
+.card p {
+    margin: 0px;
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.ranking {
+    height: 400px;
+    max-width: 350px;
+    background-color: #fff;
+    font-size: 25px;
+    border-radius: 15px;  
+    margin: auto;
+    margin-top: 120px;
+}
+
+.ranking h4 {
+    text-align: center;
+    margin-top: 10px;
+    color: #333333;
+}
+
+.ranking p {
+    margin-left: 10px;
+    color: #333333;
+}
+
+.box-table table {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+button {
+    width: 80%;
+    height: 80%;
+    border: 0;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    transition: filter 0.2s;
+}
+
+.imput-name {
+    flex: 1;
+    background: #F0F0F5;
+    border-radius: 8px;
+    border: 0;
+    padding: 16px 24px;
+    font-size: 16px;
+    color: #6C6C80;
+    width: 70%;
+}
+
+h1 {
+    font: 500 50px Roboto, sans-serif;
+    color: #333333;
+}
+
+.rankingTable {
+    font-size: 17px;
+    color: #333333;
+    width: 100%;
+    line-height: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 60%;
+}
+
+.send-button {
+    width: 70%;
+    height: 60px;
+    background: #e02041;
+    border: 0;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 16px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    transition: filter 0.2s;
+}
+
+.send-button:hover {
+    filter: brightness(90%);
+}
+
+.input-name {
+    width: 90%;
+    height: 60px;
+    margin-top: 20%;
+    color: #333333;
+    border: 3px solid #dcdce6;
+    border-radius: 20px;
+    padding: 0 24px;
+    font-size: 18px;
+}
+
+.restart {
+    width: 70%;
+    height: 60px;
+    background: #e02041;
+    border: 0;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    transition: filter 0.2s;
+}
+
+.start {
+    width: 70%;
+    height: 60px;
+    background: #e02041;
+    border: 0;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    transition: filter 0.2s;
+}
+
+.restart:hover {
+    filter: brightness(90%);
+}
+
+.start:hover {
+    filter: brightness(90%);
+}
