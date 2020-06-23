@@ -6,6 +6,11 @@ Jogo disponivel para jogar em [menderson.site](http://menderson.site)
 
 O jogo conta com um ranking das dez melhores pontuações do dia
 
+<p align="center">
+    <img alt="" title="" src="imgs/1.png">
+    <img alt="" title="" src="imgs/2.png">
+</p>
+
 ## **:computer: Tecnologias**
 
 
