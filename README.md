@@ -2,7 +2,7 @@
 
 <h3 align="center"> Aplicação de um jogo simples e divertido onde você precisa encontrar o círculo cuja cor é diferente da dos demais círculos </h3>
 
-Jogo disponivel para jogar em [menderson.site](http://menderson.site)
+<!--- Jogo disponivel para jogar em [menderson.site](http://menderson.site) -->
 
 O jogo conta com um ranking das dez melhores pontuações do dia
 
